@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataFeed;
+use App\Models\Deal;
+use App\Models\Contact;
 
 class DashboardController extends Controller
 {
+    
+
+
     public function index()
     {
-        $dataFeed = new DataFeed();
-
-        return view('pages/dashboard/dashboard', compact('dataFeed'));
+        $recentDeals = Deal::orderBy('created_at', 'desc')->take(5)->get(); // Ambil 5 data terakhir
+        $recentContact = Contact::orderBy('created_at', 'desc')->take(5)->get(); // Ambil 5 data terakhir
+        return view('pages/dashboard/dashboard', compact('recentDeals','recentContact'));
     }
-
     /**
      * Displays the analytics screen
      *

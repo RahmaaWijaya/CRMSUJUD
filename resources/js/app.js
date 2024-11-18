@@ -4,6 +4,12 @@ Livewire.start()
 
 import './bootstrap';
 
+// resources/js/app.js
+import '@fortawesome/fontawesome-free/js/all.js';
+
+//import alpine js
+import 'alpinejs';
+
 
 // Import Chart.js
 import { Chart } from 'chart.js';

@@ -2,11 +2,15 @@
     'align' => 'right'
 ])
 
+
+<script type="module" src="{{ mix('resources/js/app.js') }}"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+
 <div class="relative inline-flex" x-data="{ open: false }">
     <button
         class="inline-flex justify-center items-center group"
         aria-haspopup="true"
-        @click.prevent="open = !open"
+        @click.prevent.stop="open = !open"
         :aria-expanded="open"                        
     >
         <img class="w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" width="32" height="32" alt="{{ Auth::user()->name }}" />
@@ -36,7 +40,7 @@
         </div>
         <ul>
             <li>
-                <a class="font-medium text-sm text-violet-500 hover:text-violet-600 dark:hover:text-violet-400 flex items-center py-1 px-3" href="{{ route('profile.show') }}" @click="open = false" @focus="open = true" @focusout="open = false">Settings</a>
+                <!-- <a class="font-medium text-sm text-violet-500 hover:text-violet-600 dark:hover:text-violet-400 flex items-center py-1 px-3" href="{{ route('profile.show') }}" @click="open = false" @focus="open = true" @focusout="open = false">Settings</a> -->
             </li>
             <li>
                 <form method="POST" action="{{ route('logout') }}" x-data>
@@ -48,7 +52,7 @@
                         @focus="open = true"
                         @focusout="open = false"
                     >
-                        {{ __('Sign Out') }}
+                        {{ __('LogOut') }}
                     </a>
                 </form>                                
             </li>

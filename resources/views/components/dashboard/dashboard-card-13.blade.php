@@ -1,15 +1,15 @@
-<div class="col-span-full xl:col-span-6 bg-white dark:bg-gray-800 shadow-sm rounded-xl">
+<!-- <div class="col-span-full xl:col-span-6 bg-white dark:bg-gray-800 shadow-sm rounded-xl">
     <header class="px-5 py-4 border-b border-gray-100 dark:border-gray-700/60">
         <h2 class="font-semibold text-gray-800 dark:text-gray-100">Income/Expenses</h2>
     </header>
     <div class="p-3">
 
-        <!-- Card content -->
-        <!-- "Today" group -->
+        Card content
+        "Today" group
         <div>
             <header class="text-xs uppercase text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-700 dark:bg-opacity-50 rounded-sm font-semibold p-2">Today</header>
             <ul class="my-1">
-                <!-- Item -->
+                Item
                 <li class="flex px-2">
                     <div class="w-9 h-9 rounded-full shrink-0 bg-red-500 my-2 mr-3">
                         <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 36 36">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- Item -->
+                Item
                 <li class="flex px-2">
                     <div class="w-9 h-9 rounded-full shrink-0 bg-green-500 my-2 mr-3">
                         <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 36 36">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- Item -->
+                Item
                 <li class="flex px-2">
                     <div class="w-9 h-9 rounded-full shrink-0 bg-green-500 my-2 mr-3">
                         <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 36 36">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- Item -->
+                Item
                 <li class="flex px-2">
                     <div class="w-9 h-9 rounded-full shrink-0 bg-green-500 my-2 mr-3">
                         <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 36 36">
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- Item -->
+                Item
                 <li class="flex px-2">
                     <div class="w-9 h-9 rounded-full shrink-0 bg-gray-200 my-2 mr-3">
                         <svg class="w-9 h-9 fill-current text-gray-400" viewBox="0 0 36 36">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- Item -->
+                Item
                 <li class="flex px-2">
                     <div class="w-9 h-9 rounded-full shrink-0 bg-red-500 my-2 mr-3">
                         <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 36 36">
@@ -109,4 +109,4 @@
         </div>
 
     </div>
-</div>
+</div> -->

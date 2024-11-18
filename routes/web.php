@@ -11,6 +11,13 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CampaignController;
 
+use App\Http\Controllers\LeadsController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CallsController;
+use App\Http\Controllers\DealsController;
+use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\CustemerController;
+use App\Http\Controllers\ResellerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +39,60 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/analytics', [DashboardController::class, 'analytics'])->name('analytics');
     Route::get('/dashboard/fintech', [DashboardController::class, 'fintech'])->name('fintech');
+
+    //import dashboard tanpa controller
+    // Route::get('/dashboard', function (){
+    //     return view('pages/dashboard/dashboard');
+    // })->name('dashboard');
+
+    //tambahan punya kita bagian leadsLe
+    // Route::get('/leads', function () {
+    //     return view('pages/leads/leads');
+    // })->name('leads');
+    Route::get('/leads', [LeadsController::class, 'index'])->name('leads');
+    Route::get('/leads/create', [LeadsController::class, 'create'])->name('create-lead');
+    Route::post('/leads/store', [LeadsController::class, 'store'])->name('leads.store');
+    Route::get('/leads/import', [LeadsController::class, 'import'])->name('import-leads');
+    Route::post('/leads/import1', [LeadsController::class, 'import1'])->name('import.leads');
+    Route::get('/leads/{id}', [LeadsController::class, 'show'])->name('lead-detail');
+    // Route::get('/leads/editdata', [LeadsController::class, 'edit1'])->name('edit-data-leads');
+    Route::get('/leads/{id}/editdata', [LeadsController::class, 'edit'])->name('edit.leads');
+    Route::put('/leads/{id}/updatedata', [LeadsController::class, 'update'])->name('update.leads');
+    Route::delete('/leads/{id}/delete', [LeadsController::class, 'destroy'])->name('delete.leads');
+    Route::post('/leads/copy-to-contact/{id}', [LeadsController::class, 'copyToContact'])->name('copy.to.contact');
+
+    Route::get('/buyer', [BuyerController::class, 'index'])->name('buyer');
+    Route::get('/custemer', [CustemerController::class, 'index'])->name('custemer');
+    Route::get('/reseller', [ResellerController::class, 'index'])->name('reseller');
+
+    //route bagian contact
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/contact/edit', [ContactController::class, 'edit1'])->name('edit-contact');
+    Route::get('/contact/{id}/editdata', [ContactController::class, 'edit2'])->name('edit-data-contact');
+    Route::put('/contact/{id}/updatedata', [ContactController::class, 'update'])->name('update-contact');
+    Route::get('/contact/{id}', [ContactController::class, 'show'])->name('detail.contact');
+    Route::delete('/contact/{id}/delete', [ContactController::class, 'destroy'])->name('delete-contact');
+    Route::post('/contact/save', [ContactController::class, 'save'])->name('contact.save');
+
+    //route bagian deals
+    Route::get('/deals', [DealsController::class, 'index'])->name('deal');
+    Route::get('/deals/{id}/edit', [DealsController::class, 'edit'])->name('edit-deals');
+    Route::put('/deals/{id}/updatedeal', [DealsController::class, 'update'])->name('update-deals');
+    Route::get('/deals/create', [DealsController::class, 'create'])->name('create-deals');
+    Route::post('/deals/store', [DealsController::class, 'store'])->name('store-deals');
+    Route::get('/deals/import', [DealsController::class, 'import'])->name('import-deals');
+    Route::post('/deals/import1', [DealsController::class, 'import1'])->name('import.deals');
+    Route::delete('/deals/{id}/delete', [DealsController::class, 'destroy'])->name('delete-deals');
+
+
+
+    //route vagian  call
+    Route::get('/call', [CallsController::class, 'index'])->name('call');
+    Route::get('/call/{id}/editdata', [CallsController::class, 'edit'])->name('edit-call');
+    Route::put('/call/{id}/updatedata', [CallsController::class, 'update'])->name('update-call');
+    Route::get('/call/{id}', [CallsController::class, 'show'])->name('detail-call');
+    Route::delete('/call/{id}/delete', [CallsController::class, 'destroy'])->name('delete-call');
+
     Route::get('/ecommerce/customers', [CustomerController::class, 'index'])->name('customers');
     Route::get('/ecommerce/orders', [OrderController::class, 'index'])->name('orders');
     Route::get('/ecommerce/invoices', [InvoiceController::class, 'index'])->name('invoices');
@@ -56,6 +117,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/ecommerce/pay', function () {
         return view('pages/ecommerce/pay');
     })->name('pay');     
+
+
+
     Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns');
     Route::get('/community/users-tabs', [MemberController::class, 'indexTabs'])->name('users-tabs');
     Route::get('/community/users-tiles', [MemberController::class, 'indexTiles'])->name('users-tiles');
@@ -90,7 +154,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return view('pages/job/company-profile');
     })->name('company-profile');
     Route::get('/messages', function () {
-        return view('pages/messages');
+        return view('pages/messages'); 
     })->name('messages');
     Route::get('/tasks/kanban', function () {
         return view('pages/tasks/tasks-kanban');

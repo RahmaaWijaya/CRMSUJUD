@@ -4,7 +4,7 @@
     <button
         class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 lg:hover:bg-gray-200 dark:hover:bg-gray-700/50 dark:lg:hover:bg-gray-800 rounded-full"
         :class="{ 'bg-gray-200 dark:bg-gray-800': searchOpen }"
-        @click.prevent="searchOpen = true;if (searchOpen) $nextTick(()=>{$refs.searchInput.focus()});"
+        @click.prevent.stop="searchOpen = true;if (searchOpen) $nextTick(()=>{$refs.searchInput.focus()});"
         aria-controls="search-modal"
     >
         <span class="sr-only">Search</span>
